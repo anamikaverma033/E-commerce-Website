@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext';
+import RelatedProduct from '../Components/RelatedProduct';
 
 const Product = () => {
   const {productId} = useParams();
@@ -85,8 +86,15 @@ const Product = () => {
                 We Deliver Happiness – Shop with Confidence!
               Your Trusted Shopping Destination – Secure Payments, Fast Delivery!"
           </p>
+          <p>
+          Our E-Commerce App is a seamless and user-friendly platform designed to enhance the online shopping experience. 
+          Whether you're looking for fashion, electronics, home essentials, or groceries, 
+          our app provides a vast range of products at your fingertips.
+          </p>
         </div>
       </div>
+                  {/* Display Related Products */}
+                <RelatedProduct category={productData.category} subCategory={productData.subCategory}/>
     </div> 
   ) : <div className='opacity-0'>
 
