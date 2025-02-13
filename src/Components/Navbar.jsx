@@ -8,7 +8,7 @@ import { RiArrowLeftSLine } from "react-icons/ri";
 import { ShopContext } from '../Context/ShopContext';
 const Navbar = () => {
     const [visible,setVisible] = useState(false);
-    const {showSearch,setShowSearch} = useContext(ShopContext);
+    const {showSearch,setShowSearch,getCartCount} = useContext(ShopContext);
 
   return (
     <div className='flex items-center justify-between py-5 font-medium bg-black-500'>
@@ -45,7 +45,7 @@ const Navbar = () => {
         </div>
             
         <Link to='/cart' className='relative'>
-            <p className='absolute right-[-2px] bottom-[15px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[10px]'>10</p>
+            <p className='absolute right-[-2px] bottom-[15px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[10px]'>{getCartCount()}</p>
             <FiShoppingCart />
         </Link>
         <IoMenuOutline onClick={()=>setVisible(true)} className='w-5 cursor-pointer sm:hidden' />
